@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIventario.ProductFormPage"
+             Title="Formulario Producto"
+             BackgroundColor="#F9F9F9">
+
+    <ScrollView Padding="20">
+        <StackLayout Spacing="15">
+            <!-- Nombre del producto -->
+            <Frame BackgroundColor="White" Padding="10" BorderColor="LightGray" CornerRadius="10">
+                <Entry x:Name="ProductNameEntry" 
+                       Placeholder="Nombre del Producto" 
+                       TextColor="Black" 
+                       FontSize="16"/>
+            </Frame>
+
+            <!-- Descripción del producto -->
+            <Frame BackgroundColor="White" Padding="10" BorderColor="LightGray" CornerRadius="10">
+                <Editor x:Name="ProductDescriptionEditor" 
+                        Placeholder="Descripción del Producto" 
+                        TextColor="Black" 
+                        FontSize="16" 
+                        HeightRequest="100"/>
+            </Frame>
+
+            <!-- Precio del producto -->
+            <Frame BackgroundColor="White" Padding="10" BorderColor="LightGray" CornerRadius="10">
+                <Entry x:Name="ProductPriceEntry" 
+                       Placeholder="Precio" 
+                       Keyboard="Numeric" 
+                       TextColor="Black" 
+                       FontSize="16"/>
+            </Frame>
+
+            <!-- Cantidad del producto -->
+            <Frame BackgroundColor="White" Padding="10" BorderColor="LightGray" CornerRadius="10">
+                <Entry x:Name="ProductQuantityEntry" 
+                       Placeholder="Cantidad" 
+                       Keyboard="Numeric" 
+                       TextColor="Black" 
+                       FontSize="16"/>
+            </Frame>
+
+            <!-- Selección de categoría -->
+            <Frame BackgroundColor="White" Padding="10" BorderColor="LightGray" CornerRadius="10">
+                <Picker x:Name="CategoryPicker" 
+                        Title="Seleccionar Categoría" 
+                        TextColor="Black" 
+                        FontSize="16"/>
+            </Frame>
+
+            <!-- Selección de proveedor -->
+            <Frame BackgroundColor="White" Padding="10" BorderColor="LightGray" CornerRadius="10">
+                <Picker x:Name="SupplierPicker" 
+                        Title="Seleccionar Proveedor" 
+                        TextColor="Black" 
+                        FontSize="16"/>
+            </Frame>
+
+            <!-- Botón para seleccionar la imagen -->
+            <Button Text="Seleccionar Imagen" 
+                    Clicked="OnSelectImageClicked" 
+                    BackgroundColor="#4CAF50" 
+                    TextColor="White" 
+                    Padding="12,8" 
+                    FontSize="16" 
+                    CornerRadius="10" 
+                    HorizontalOptions="FillAndExpand"/>
+
+            <!-- Imagen seleccionada -->
+            <Image x:Name="ProductImage" 
+                   HeightRequest="200" 
+                   WidthRequest="200" 
+                   HorizontalOptions="Center" 
+                   Aspect="AspectFill" 
+                   Margin="0,20,0,0"/>
+
+            <!-- Botón para guardar el producto -->
+            <Button Text="Guardar Producto" 
+                    Clicked="OnSaveProductClicked" 
+                    BackgroundColor="#FF5722" 
+                    TextColor="White" 
+                    Padding="12,8" 
+                    FontSize="16" 
+                    CornerRadius="10" 
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

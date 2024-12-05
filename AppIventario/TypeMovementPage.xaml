@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIventario.TypeMovementPage"
+             Title="Tipos de Movimiento">
+
+    <!-- Contenedor principal con espaciado y márgenes -->
+    <StackLayout Padding="20" Spacing="20">
+
+        <!-- Botón para agregar tipo de movimiento -->
+        <Button Text="Agregar Tipo de Movimiento"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="16"
+                Padding="12"
+                CornerRadius="10"
+                HorizontalOptions="FillAndExpand"
+                Clicked="OnAddTypeMovementClicked" />
+
+        <!-- Lista de tipos de movimientos -->
+        <Frame BackgroundColor="#F5F5F5"
+               BorderColor="#DDDDDD"
+               CornerRadius="10"
+               HasShadow="True">
+            <ListView x:Name="TypeMovementsListView"
+                      ItemTapped="OnTypeMovementTapped"
+                      SeparatorVisibility="Default"
+                      SeparatorColor="#BDBDBD"
+                      BackgroundColor="Transparent"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="White"
+                                   BorderColor="#E0E0E0"
+                                   CornerRadius="10"
+                                   Padding="10"
+                                   Margin="5">
+                                <StackLayout Spacing="5">
+                                    <Label Text="{Binding Name}"
+                                           FontAttributes="Bold"
+                                           FontSize="18"
+                                           TextColor="#2E7D32" />
+                                    <Label Text="{Binding Description}"
+                                           FontSize="14"
+                                           TextColor="#555" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+
+    </StackLayout>
+</ContentPage>

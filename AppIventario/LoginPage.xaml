@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIventario.LoginPage"
+             Shell.NavBarIsVisible="False">
+ 
+
+
+
+    <VerticalStackLayout VerticalOptions="Center">
+        <Frame BackgroundColor="white" BorderColor="White" HeightRequest="580" WidthRequest="320">
+            <Grid HorizontalOptions="FillAndExpand" RowSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0">
+                    <Image Margin="0,0" HeightRequest="90" WidthRequest="98" Source="user.png" />
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="50,50,50,50"/>
+                    </Border.StrokeShape>
+                </Border>
+                <Label Grid.Row="1"  Text="LOGIN" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" TextColor="black" />
+                <Entry x:Name="usernameEntryField" Grid.Row="2" Placeholder="Usuario" PlaceholderColor="black" TextColor="Black"  />
+                <Entry  x:Name="passwordEntryField" Grid.Row="3" Placeholder="Contraseña" PlaceholderColor="black" IsPassword="True" TextColor="Black" />
+                <Button Grid.Row="4"  Text="Iniciar Sesión" Background="#00F" TextColor="White" Clicked="OnLoginButtonClicked" />
+                
+            </Grid>
+        </Frame>
+    </VerticalStackLayout>
+
+
+</ContentPage>

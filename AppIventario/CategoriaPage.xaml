@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIventario.CategoriaPage"
+             BackgroundColor="#F9F9F9">
+
+    <ScrollView Padding="20">
+        <StackLayout Spacing="20">
+            <!-- Botón para agregar categoría -->
+            <Button Text="Agregar Categoría"
+                    BackgroundColor="#4CAF50" 
+                    TextColor="White" 
+                    FontSize="18" 
+                    Padding="12,10" 
+                    CornerRadius="10" 
+                    HorizontalOptions="Center"
+                    Clicked="OnAddCategoryClicked" />
+
+            <!-- Listado de categorías -->
+            <Frame BackgroundColor="White" 
+                   BorderColor="LightGray" 
+                   CornerRadius="10" 
+                   HasShadow="True" 
+                   Padding="10">
+                <ListView x:Name="CategoriesListView"
+                          ItemTapped="OnCategoryTapped"
+                          SeparatorVisibility="Default"
+                          BackgroundColor="White">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Padding="10" BorderColor="LightGray" CornerRadius="8" HasShadow="True">
+                                    <!-- Contenedor principal con textos y botones alineados -->
+                                    <Grid ColumnDefinitions="*,Auto,Auto" RowDefinitions="Auto">
+                                        <!-- Nombre y descripción -->
+                                        <StackLayout Grid.Column="0" VerticalOptions="Center">
+                                            <Label Text="{Binding name}" 
+                                                   FontSize="16" 
+                                                   FontAttributes="Bold" 
+                                                   TextColor="Black"/>
+                                            <Label Text="{Binding description}" 
+                                                   FontSize="14" 
+                                                   TextColor="Gray"/>
+                                        </StackLayout>
+
+                                        <!-- Botón Editar -->
+                                        <Button Text="Editar" 
+                                                Grid.Column="1"
+                                                BackgroundColor="#2196F3" 
+                                                TextColor="White" 
+                                                FontSize="14" 
+                                                CornerRadius="5"
+                                                Clicked="OnEditClicked" />
+
+                                        <!-- Botón Eliminar -->
+                                        <Button Text="Eliminar" 
+                                                Grid.Column="2"
+                                                BackgroundColor="#F44336" 
+                                                TextColor="White" 
+                                                FontSize="14" 
+                                                CornerRadius="5"
+                                                Clicked="OnDeleteClicked" />
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

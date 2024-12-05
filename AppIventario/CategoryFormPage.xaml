@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIventario.CategoryFormPage"
+             Title="Agregar Categoría"
+             BackgroundColor="#F9F9F9">
+
+    <ScrollView Padding="20">
+        <StackLayout Spacing="20">
+            <!-- Frame para el nombre de la categoría -->
+            <Frame BorderColor="LightGray" 
+                   CornerRadius="8" 
+                   Padding="10" 
+                   HasShadow="True">
+                <Entry x:Name="NameEntry" 
+                       Placeholder="Nombre de la categoría" 
+                       BackgroundColor="White"
+                       FontSize="16"
+                       TextColor="Black"/>
+            </Frame>
+
+            <!-- Frame para la descripción de la categoría -->
+            <Frame BorderColor="LightGray" 
+                   CornerRadius="8" 
+                   Padding="10" 
+                   HasShadow="True">
+                <Editor x:Name="DescriptionEditor" 
+                        Placeholder="Descripción de la categoría" 
+                        BackgroundColor="White"
+                        FontSize="16"
+                        TextColor="Black"/>
+            </Frame>
+
+            <!-- Botón Guardar -->
+            <Button Text="Guardar"
+                    BackgroundColor="#4CAF50" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    Padding="12,10"
+                    CornerRadius="8"
+                    Clicked="OnSaveButtonClicked"
+                    HorizontalOptions="Center"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

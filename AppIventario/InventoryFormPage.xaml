@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIventario.InventoryFormPage"
+             Title="InventoryFormPage">
+
+    <ScrollView Padding="20">
+        <StackLayout Spacing="20">
+
+            <!-- Título principal -->
+            <Label Text="Registrar Movimiento" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="#333"/>
+
+            <!-- Producto -->
+            <StackLayout>
+                <Label Text="Producto:" 
+                       FontSize="16" 
+                       FontAttributes="Bold" 
+                       TextColor="Black"/>
+                <Label x:Name="ProductNameLabel" 
+                       FontSize="16" 
+                       TextColor="#555"/>
+            </StackLayout>
+
+            <!-- Tipo de Movimiento -->
+            <StackLayout>
+                <Label Text="Tipo de Movimiento:" 
+                       FontSize="16" 
+                       FontAttributes="Bold" 
+                       TextColor="Black"/>
+             
+
+
+                <Frame BackgroundColor="White" Padding="10" BorderColor="LightGray" CornerRadius="10">
+                    <Picker x:Name="MovementTypePicker" 
+                  Title="Seleccionar Tipo" 
+                            ItemsSource="{Binding MovementTypes}"
+                  TextColor="Black" 
+                  FontSize="16"/>
+                </Frame>
+
+            </StackLayout>
+
+            <!-- Cantidad -->
+            <StackLayout>
+                <Label Text="Cantidad:" 
+                       FontSize="16" 
+                       FontAttributes="Bold" 
+                       TextColor="Black"/>
+                <Frame BackgroundColor="White" 
+                       BorderColor="#DDDDDD" 
+                       CornerRadius="5">
+                    <Entry x:Name="QuantityEntry" 
+                           Keyboard="Numeric" 
+                           Placeholder="Ingrese cantidad" 
+                           HeightRequest="45" 
+                           Margin="10"/>
+                </Frame>
+            </StackLayout>
+
+            <!-- Botón de registro -->
+            <Button Text="Registrar" 
+                    BackgroundColor="#4CAF50" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    Padding="12,10" 
+                    CornerRadius="8" 
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnRegisterClicked"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

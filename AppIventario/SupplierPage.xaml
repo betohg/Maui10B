@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIventario.SupplierPage"
+            
+             BackgroundColor="#F9F9F9">
+
+    <ScrollView Padding="20">
+        <StackLayout Spacing="20">
+            <!-- Botón para agregar proveedor -->
+            <Button Text="Agregar Proveedor"
+                    BackgroundColor="#4CAF50" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    Padding="12,10"
+                    CornerRadius="8"
+                    HorizontalOptions="Center"
+                    Clicked="OnAddSupplierClicked"/>
+
+            <!-- Listado de proveedores -->
+            <ListView x:Name="SuppliersListView"
+                      ItemTapped="OnSupplierTapped" 
+                      SeparatorColor="LightGray">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="10"
+                                   Margin="5"
+                                   BackgroundColor="White"
+                                   BorderColor="LightGray"
+                                   CornerRadius="10"
+                                   HasShadow="True">
+                                <StackLayout Orientation="Horizontal" Spacing="15">
+                                    <!-- Ícono para cada proveedor -->
+                                    <Image Source="pro.png" 
+                                           WidthRequest="40" 
+                                           HeightRequest="40" 
+                                           Aspect="AspectFill"
+                                           VerticalOptions="Center"/>
+
+                                    <!-- Información del proveedor -->
+                                    <StackLayout VerticalOptions="Center">
+                                        <Label Text="{Binding Name}" 
+                                               FontSize="16" 
+                                               FontAttributes="Bold" 
+                                               TextColor="Black"/>
+                                        <Label Text="{Binding Description}" 
+                                               FontSize="12" 
+                                               TextColor="Gray"/>
+                                    </StackLayout>
+
+                                    <!-- Botones de Editar y Eliminar -->
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" Spacing="10">
+                                        <!-- Botón Editar -->
+                                        <Button Text="Editar"
+                                                BackgroundColor="#FFC107"
+                                                TextColor="White"
+                                                FontAttributes="Bold"
+                                                Padding="10"
+                                                CornerRadius="8"
+                                                Clicked="OnEditSupplierClicked"/>
+                                        <!-- Botón Eliminar -->
+                                        <Button Text="Eliminar"
+                                                BackgroundColor="#F44336"
+                                                TextColor="White"
+                                                FontAttributes="Bold"
+                                                Padding="10"
+                                                CornerRadius="8"
+                                                Clicked="OnDeleteSupplierClicked"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

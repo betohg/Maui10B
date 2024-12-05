@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIventario.ProductPage"
+           >
+
+    <StackLayout Padding="20">
+        <!-- Botón Agregar Producto estilizado -->
+        <Button Text="Agregar Producto" 
+                BackgroundColor="#4CAF50" 
+                TextColor="White" 
+                FontAttributes="Bold" 
+                Padding="10"
+                CornerRadius="20"
+                Clicked="OnAddProductClicked" 
+                HorizontalOptions="Center" />
+
+        <!-- Lista de productos -->
+        <ListView x:Name="ProductsListView" ItemTapped="OnProductsTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="15" Margin="10" 
+                               BackgroundColor="White" 
+                               BorderColor="LightGray" 
+                               CornerRadius="10" 
+                               HasShadow="True">
+                            <StackLayout Orientation="Horizontal">
+                                <!-- Imagen del producto -->
+                                <Image Source="{Binding ImageUrl}" 
+                                       WidthRequest="80" 
+                                       HeightRequest="80" 
+                                       Aspect="AspectFill" 
+                                       Margin="0,0,15,0" />
+
+                                <!-- Información del producto -->
+                                <StackLayout Orientation="Vertical" 
+                                             HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Name}" 
+                                           FontSize="16" 
+                                           FontAttributes="Bold" 
+                                           TextColor="Black" 
+                                           LineBreakMode="TailTruncation"/>
+                                    <Label Text="{Binding Description}" 
+                                           FontSize="12" 
+                                           TextColor="Gray" 
+                                           LineBreakMode="TailTruncation" />
+                                    <Label Text="{Binding Quantity}" 
+                                           FontSize="14" 
+                                           TextColor="Green" />
+                                    <Label Text="{Binding Price, StringFormat='{0:C}'}" 
+                                           FontSize="14" 
+                                           TextColor="Green" />
+                                </StackLayout>
+
+                                <!-- Botón Inventario -->
+                                <Button Text="Inventario" 
+                                        VerticalOptions="Center" 
+                                        Clicked="OnInventoryButtonClicked"
+                                        CommandParameter="{Binding .}" 
+                                        BackgroundColor="#FFA500" 
+                                        TextColor="White" 
+                                        Padding="10,0" 
+                                        CornerRadius="10" />
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

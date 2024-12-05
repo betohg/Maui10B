@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIventario.HomePage"
+             Shell.NavBarIsVisible="True">
+    <Frame BackgroundColor="white" BorderColor="White" HeightRequest="580" WidthRequest="320">
+        <Grid RowDefinitions="*, *, *"  
+              ColumnDefinitions="*, *"
+              HorizontalOptions="Center"
+              VerticalOptions="CenterAndExpand"
+              ColumnSpacing="20"
+              RowSpacing="30">
+
+            <!-- Títulos y botones anteriores no se modifican -->
+            <Grid>
+                <Label Grid.Row="1" Text="MENU" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" TextColor="black" Margin="55,-90,-50,0" />
+            </Grid>
+
+            <!-- Primer botón (Categorías) -->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButton1Clicked"/>
+                </Grid.GestureRecognizers>
+                <Label Text="Categorías"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Margin="0,-25,0,0"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+                <Frame CornerRadius="50"
+                       WidthRequest="100" HeightRequest="100"
+                       BackgroundColor="LightGray"
+                       BorderColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center">
+                    <Frame.Content>
+                        <Image Source="cate.png" Aspect="AspectFill" />
+                    </Frame.Content>
+                </Frame>
+            </Grid>
+
+            <!-- Segundo botón (Proveedores) -->
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButton2Clicked"/>
+                </Grid.GestureRecognizers>
+                <Label Text="Proveedores"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Margin="0,-25,0,0"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+                <Frame CornerRadius="50"
+                       WidthRequest="100" HeightRequest="100"
+                       BackgroundColor="LightGray"
+                       BorderColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center">
+                    <Frame.Content>
+                        <Image Source="pro.png" Aspect="AspectFill" />
+                    </Frame.Content>
+                </Frame>
+            </Grid>
+
+            <!-- Tercer botón (Productos) -->
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButton3Clicked"/>
+                </Grid.GestureRecognizers>
+                <Label Text="Productos"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Margin="0,-25,0,0"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+                <Frame CornerRadius="50"
+                       WidthRequest="100" HeightRequest="100"
+                       BackgroundColor="LightGray"
+                       BorderColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center">
+                    <Frame.Content>
+                        <Image Source="producto.png" Aspect="AspectFill" />
+                    </Frame.Content>
+                </Frame>
+            </Grid>
+
+            <!-- Cuarto botón (TipoMov) -->
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButton4Clicked"/>
+                </Grid.GestureRecognizers>
+                <Label Text="TipoMov"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Margin="0,-25,0,0"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+                <Frame CornerRadius="50"
+                       WidthRequest="100" HeightRequest="100"
+                       BackgroundColor="LightGray"
+                       BorderColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center">
+                    <Frame.Content>
+                        <Image Source="flecha.png" Aspect="AspectFill" />
+                    </Frame.Content>
+                </Frame>
+            </Grid>
+
+            <!-- Quinto botón (Movimientos) -->
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButton5Clicked"/>
+                </Grid.GestureRecognizers>
+                <Label Text="Movimientos"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Margin="0,-25,0,0"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+                <Frame CornerRadius="50"
+                       WidthRequest="100" HeightRequest="100"
+                       BackgroundColor="LightGray"
+                       BorderColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center">
+                    <Frame.Content>
+                        <Image Source="movements.png" Aspect="AspectFill" />
+                    </Frame.Content>
+                </Frame>
+            </Grid>
+
+            <!-- Sexto botón (Nuevo botón) -->
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButton6Clicked"/>
+                </Grid.GestureRecognizers>
+                <Label Text="Salir"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Margin="0,-25,0,0"
+                       TextColor="Black"
+                       FontAttributes="Bold"/>
+                <Frame CornerRadius="50"
+                       WidthRequest="100" HeightRequest="100"
+                       BackgroundColor="LightGray"
+                       BorderColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center">
+                    <Frame.Content>
+                        <Image Source="logout.png" Aspect="AspectFill" />
+                    </Frame.Content>
+                </Frame>
+            </Grid>
+
+        </Grid>
+    </Frame>
+</ContentPage>
